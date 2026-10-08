@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Voice Connect - Unified Campus Intercom & PA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>">
+</head>
+<body>
+
+  <!-- Top Global Navigation Bar -->
+  <header class="navbar">
+    <div class="brand" onclick="window.campusVoiceApp.setFacultyPage('dashboard')">
+      <div class="brand-icon">🎙️</div>
+      <div>
+        <div style="display: flex; align-items: center;">
+          <span class="brand-title">Campus Voice Connect</span>
+          <span class="brand-badge">College PA v2.4</span>
+        </div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1;">
+          Smart Cabin-to-Classroom Intercom
+        </div>
+      </div>
+    </div>
+
+    <!-- View / Role Switcher -->
+    <div class="view-mode-selector">
+      <button class="mode-btn active" data-mode="faculty">
+        <span>👨‍🏫</span> Faculty View
+      </button>
+      <button class="mode-btn" data-mode="classroom">
+        <span>🏫</span> Classroom Speaker
+      </button>
+      <button class="mode-btn demo-highlight" data-mode="dual">
+        <span>🚀</span> Split Demo
+      </button>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="nav-actions">
+      <button id="login-nav-btn" class="btn btn-ghost" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; border: 1px solid var(--border-color);">
+        🔑 Login Portal
+      </button>
+
+      <div class="campus-status-pill">
+        <span class="status-dot pulsing"></span>
+        <span>LAN Active <strong style="color:var(--text-primary);">(11ms)</strong></span>
+      </div>
+
+      <button id="bell-test-btn" class="icon-btn" title="Test Campus Bell Chime" aria-label="Test Bell">
+        🔔
+      </button>
+
+      <button id="theme-toggle-btn" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+        ☀️
+      </button>
+
+      <div id="user-badge" style="display: flex; align-items: center; gap: 0.5rem; padding-left: 0.5rem; border-left: 1px solid var(--border-color); cursor: pointer;" title="Click to view Profile / Switch">
+        <span style="font-size: 1.25rem;">👨‍🏫</span>
+        <div style="font-size: 0.78rem; line-height: 1.2;">
+          <strong style="display: block; color: var(--text-primary);">Cabin 204</strong>
+          <span style="color: var(--accent-cyan);">ECE Dept</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic Application Container -->
+  <main class="app-container" id="main-content">
+    <!-- Populated by js/app.js -->
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 50vh;">
+      <p style="color: var(--text-secondary);">Initializing Campus Voice Engine...</p>
+    </div>
+  </main>
+
+  <!-- Toast Notification Mount -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Application Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
